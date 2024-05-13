@@ -7,8 +7,11 @@
  *  - ne pas utiliser la méthode concat, map, merge, push
  *  - for, foreach, while, do while sont interdits
  */
+let arr1 = [1,2,3]
+let arr2 = [5,3,4]
+const concat = (arr1, arr2) =>[...arr1, ...arr2];
 
-const concat = (arr1, arr2) => {}
+console.log(concat(arr1, arr2));
 
 /**
  * utiliser l'opérateur de composition ... afin d'ajouter un élément à un tableau
