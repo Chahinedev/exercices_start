@@ -22,7 +22,10 @@ console.log(concat(arr1, arr2));
  * - ne pas utiliser la méthode push
  */
 
-const push = (arr, item) => {}
+const push = (arr, item) => [...arr, item];
+
+console.log(push([1, 2, 3], 4));  // Affichera [1, 2, 3, 4]
+
 
 /**
  * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
