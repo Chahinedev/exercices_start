@@ -13,10 +13,30 @@
  * documentation: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 */
 
-//const {apiResponse} = require("./11_async");
+
+
+const { apiResponse } = require("./11_async");
 
 const parallel = () => {
+   
+    const urls = [
+        'https://jsonplaceholder.typicode.com/todos/1',
+        'https://jsonplaceholder.typicode.com/todos/2',
+        'https://jsonplaceholder.typicode.com/todos/3'
+    ];
 
+  
+    const promises = urls.map(url => apiResponse(url));
+
+
+    return Promise.all(promises)
+        .then(results => {
+            return results;
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+            return [];
+        });
 }
 
-module.exports = {parallel};
+module.exports = { parallel };

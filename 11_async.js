@@ -11,7 +11,12 @@
  *    - ne pas utiliser async await
  * 
  */
+
+const { sleep } = require("./10_promise");
+
+
 const usingThen = (cb) => {
+    
 }
 
 /**
@@ -25,8 +30,14 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
 
+
+
+const usingAwait = async (cb) => {
+    // Attendez que la promesse de sleep soit résolue
+    await sleep(2000);
+    // Exécutez le callback après le délai
+    cb();
 }
 
 /**
@@ -44,9 +55,19 @@ const usingAwait = (cb) => {
 //décommentez la ligne suivante une fois le package installé
 //const axios = require("axios");
 
+const axios = require("axios"); // installer axios ensuite on y fait apple ^^
+/**
+ * 
+ * @param {string} url 
+ * @returns {Promise<object>}
+ */
 const apiResponse = async (url) => {
-
+    try {
+        const response = await axios.get(url);
+        return response.data; 
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null; 
+    }
 }
-
-
 module.exports = {usingThen, usingAwait, apiResponse};
