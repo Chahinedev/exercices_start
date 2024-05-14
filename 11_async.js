@@ -14,10 +14,9 @@
 
 const { sleep } = require("./10_promise");
 
-
 const usingThen = (cb) => {
-    
-}
+    sleep(2000).then(cb);
+};
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre

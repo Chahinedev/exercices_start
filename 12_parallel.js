@@ -39,4 +39,19 @@ const parallel = () => {
         });
 }
 
+const parallel2 = async () => {
+   
+    const urls = [
+        'https://jsonplaceholder.typicode.com/todos/1',
+        'https://jsonplaceholder.typicode.com/todos/2',
+        'https://jsonplaceholder.typicode.com/todos/3'
+    ];
+
+  
+    const promises = urls.map(url => apiResponse(url));
+
+
+    return await Promise.all(promises)
+}
+
 module.exports = { parallel };
