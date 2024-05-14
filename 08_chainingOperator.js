@@ -19,7 +19,7 @@
 const getGroupName  = utilisateur => utilisateur.group?.name;
 
 
-console.log(getGroupName ({ name: "vegeta", group: { name: "Kamehamehaaaa" } })); // Affiche: "admin"
+console.log(getGroupName ({ name: "vegeta", group: { name: "Kamehamehaaaa" } })); // Affiche: "kamehamehaaaa"
 console.log(getGroupName ({ name: "piccolo", group: null })); // Affiche: undefined
 console.log(getGroupName ({ name: "sangoku" })); // Affiche: undefined
 
