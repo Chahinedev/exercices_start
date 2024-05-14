@@ -12,15 +12,10 @@
  *  - interdiction d'utiliser slice ou splice
  */
 
-function retire([first, second]) {
-    return [first, second];
-  }
-const extractFirstTwo = ['naruto', 'sasuke', 'jiraya', 'pain', 'hitachi'];
+const extractFirstTwo = ([premier, second, ...rest]) => [premier, second];
 
-  
-  // Utilisation de la fonction avec un exemple
-  console.log(extractFirstTwo); // Affichera ['naruto', 'sasuke']
-
+const resultat = extractFirstTwo([1, 2, 3]);
+console.log(resultat); // Affiche: [1, 2]
 
 /**
  * utilisez la décomposition pour extraire la premiere case du tableau et le reste du tableau
@@ -29,7 +24,9 @@ const extractFirstTwo = ['naruto', 'sasuke', 'jiraya', 'pain', 'hitachi'];
  * exemple: [1, 2, 3] => [2, 3]
  */
 
-const extractRest = () => {}
+const extractRest = ([premier, ...rest]) => rest;
+const rezu= extractRest([1, 2, 3]);
+console.log(rezu); 
 
 /**
  * utilisez la décomposition pour extraire le champ "name" de l'objet passé en paramètre
@@ -43,7 +40,11 @@ const extractRest = () => {}
  * - interdiction d'utiliser l'opérateur "." pour accéder au champ "name"
  */
 
-const extractName = () => {}
+
+const extractName = ({ name }) => name;
+
+const nom = extractName({ name: "sangoku", age: 42 });
+console.log(nom); // Affiche: "sangoku"
 
 /**
  * utilisez la décomposition pour retourner l'objet utilisateur sans le champ "password"
@@ -56,6 +57,11 @@ const extractName = () => {}
  * 
  */
 
-const removePassword = () => {};
+
+const removePassword = ({ password, ...autresAttributs }) => autresAttributs;
+
+// Exemple d'utilisation:
+const utilisateurSansPassword = removePassword({ name: "vegeta", password: "1234" });
+console.log(utilisateurSansPassword); // Affiche: { name: "vegeta" }
 
 module.exports = {extractFirstTwo, extractRest, extractName, removePassword}
