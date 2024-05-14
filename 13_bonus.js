@@ -30,10 +30,11 @@ ex: la pomme est rouge et la banane est jaune
 const countWords = (sentence) => (
   sentence.split(" ").reduce((acc, word) => {
     acc[word] = acc[word] ? acc[word] + 1 : 1;
+    return acc;
   }, {})
 )
 
-console.log(countWords2("la pomme est rouge et la banane est jaune"));
+console.log(countWords("la pomme est rouge et la banane est jaune"));
 /**
 Exercice : Trier un objet par valeur
 
