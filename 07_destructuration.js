@@ -12,7 +12,15 @@
  *  - interdiction d'utiliser slice ou splice
  */
 
-const extractFirstTwo = () => {}
+function retire([first, second]) {
+    return [first, second];
+  }
+const extractFirstTwo = ['naruto', 'sasuke', 'jiraya', 'pain', 'hitachi'];
+
+  
+  // Utilisation de la fonction avec un exemple
+  console.log(extractFirstTwo); // Affichera ['naruto', 'sasuke']
+
 
 /**
  * utilisez la décomposition pour extraire la premiere case du tableau et le reste du tableau
